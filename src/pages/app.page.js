@@ -1,4 +1,4 @@
-import { MainPage, SearchPage, ResultPage } from "./index";
+import { MainPage, SearchPage, ResultPage, BasePage } from "./index";
 
 export class App{
     constructor(page){
@@ -6,5 +6,6 @@ export class App{
         this.mainPage = new MainPage(page);
         this.searchPage = new SearchPage(page);
         this.resultPage = new ResultPage(page);
+        this.basePage = new BasePage(page);
     }
 }
