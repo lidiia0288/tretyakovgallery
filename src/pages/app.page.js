@@ -1,11 +1,10 @@
-import { MainPage, SearchPage, ResultPage, BasePage } from "./index";
+import { MainPage, SearchPage, BasePage } from "./index";
 
 export class App{
     constructor(page){
         this.page = page;
         this.mainPage = new MainPage(page);
         this.searchPage = new SearchPage(page);
-        this.resultPage = new ResultPage(page);
         this.basePage = new BasePage(page);
     }
 }

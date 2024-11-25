@@ -12,14 +12,14 @@ test("Search", async ({ page }) => {
   await app.mainPage.open(url);
   await app.mainPage.goToSearch();
   await app.searchPage.goToFill(firstSearch);
-  await app.resultPage.goToUrlFirst();
+  await app.searchPage.goToResult();
 
-  await app.basePage.urlMethod(); 
+  expect(await app.searchPage.urlMethod()).toContain(encodeURI('Пушкин')); 
 
   await app.mainPage.open(url);
   await app.mainPage.goToSearch();
   await app.searchPage.goToFill(secondSearch);
-  await app.resultPage.goToUrlSecond();
+  await app.searchPage.goToResult();
 
-  await app.basePage.urlMethodTwo();
+  expect(await app.searchPage.urlMethod()).toContain(encodeURI('Италия'));
   });
